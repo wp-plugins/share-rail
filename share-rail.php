@@ -17,7 +17,7 @@ class shareRail {
 	var $nonceField = "";
 	function shareRail(){
 		$this->nonceField = md5($this->pluginName . $this->version);
-		$this->editFields["settings"]["share-rail-class-attachment"] = array("default"=>"the_content", "label"=>"Element Class attachment", "type"=>"text", "description"=>"This is where the rail attaches to");
+		$this->editFields["settings"]["share-rail-class-attachment"] = array("default"=>"#the_content", "label"=>"Element Class attachment", "type"=>"text", "description"=>"This is where the rail attaches to");
 		$this->editFields["settings"]["share-rail-jquery-use-google"] = array("default"=>false, "label"=>"Use Google's jQuery", "type"=>"check", "description"=>"If you do not have jQuery installed you can use jQuery on Google by enabling this option");
 		$this->editFields["settings"]["share-rail-show-on-pages"] = array("default"=>false, "label"=>"Show on pages", "type"=>"check", "description"=>"Do you want this to show on pages?");
 		$this->editFields["settings"]["share-rail-show-on-posts"] = array("default"=>false, "label"=>"Show on posts", "type"=>"check", "description"=>"Do you want this to show on posts?");
