@@ -15,7 +15,7 @@ Stable tag: 3.1.3
 Use this plugin to apply floating shares to your posts and pages.
 
 == Description ==
-Use this plugin to apply floating shares to your posts and pages.
+Use this plugin to apply <a href="http://wordpress.org/extend/plugins/share-rail/screenshots/">floating shares</a> to your posts and pages.
 
 This is very similar to the one found on mashable.com.
 
