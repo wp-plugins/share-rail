@@ -18,8 +18,8 @@ $random = rand(111111, 999999);
 
 ?><div class="wrap">
   <div class="icon32" id="icon-tools"><br></div><h2>Share Rail Settings</h2>
-    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7NRW58F3CDBC" style="float:right;"><img src="https://www.paypal.com/en_US/i/btn/x-click-but11.gif" alt="Donate" /></a>
-    <p>The settings here are fairly straight forward so have a play find what works best.</p>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7NRW58F3CDBC" style="float:right;" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/x-click-but11.gif" alt="Donate" /></a>
+    <p>The settings here are fairly straight forward so have a play find what works best. If you are having any problems using this plugin, please do not rate this plugin as 1 star on wordpress, visit our site for help (<a href="http://studio.bloafer.com/wordpress-plugins/share-rail/" target="_blank">Bloafer</a>), you can post a comment and we will work on addressing the issue</p>
     <form method="post" action="">
       <input type="hidden" name="crc" value="settings" />
       <?php wp_nonce_field('settings', $shareRail->nonceField); ?>
@@ -36,6 +36,13 @@ $random = rand(111111, 999999);
             <input type="text" name="<?php print $editField ?>" id="<?php print $editField ?>" value="<?php echo $$editField; ?>" class="regular-text" />
           <?php }elseif($editValue["type"]=="check"){ ?>
             <input type="checkbox" name="<?php print $editField ?>" id="<?php print $editField ?>"<?php if($$editField){ ?> checked="checked"<?php } ?> />
+          <?php }elseif($editValue["type"]=="drop" && isset($editValue["data"])){ ?>
+            <select name="<?php print $editField ?>" id="<?php print $editField ?>">
+              <?php foreach($editValue["data"] as $k=>$v){
+				  ?>  <option value="<?php print $k ?>" <?php if($$editField==$k){ ?> selected="selected"<?php } ?>><?php print $v ?></option><?php
+			  }
+			  ?>
+            </select>
           <?php }elseif($editValue["type"]=="textarea"){ ?>
             <textarea cols="30" rows="5" id="<?php print $editField ?>" name="<?php print $editField ?>"><?php echo $$editField; ?></textarea>
           <?php }elseif($editValue["type"]=="warn"){ ?>

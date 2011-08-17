@@ -3,7 +3,7 @@
 Plugin Name: Share Rail
 Plugin URI: http://studio.bloafer.com/wordpress-plugins/share-rail/
 Description: Use this plugin to apply floating shares to your posts and pages.
-Version: 0.1
+Version: 0.2b
 Author: Kerry James
 Author URI: http://studio.bloafer.com/
 */
@@ -13,12 +13,13 @@ $shareRail = new shareRail();
 
 class shareRail {
 	var $pluginName = "Share Rail";
-	var $version = "0.1";
+	var $version = "0.2b";
 	var $nonceField = "";
 	function shareRail(){
 		$this->nonceField = md5($this->pluginName . $this->version);
 		$this->editFields["settings"]["share-rail-class-attachment"] = array("default"=>"#the_content", "label"=>"Element Class attachment", "type"=>"text", "description"=>"This is where the rail attaches to");
 		$this->editFields["settings"]["share-rail-jquery-use-google"] = array("default"=>false, "label"=>"Use Google's jQuery", "type"=>"check", "description"=>"If you do not have jQuery installed you can use jQuery on Google by enabling this option");
+		$this->editFields["settings"]["share-rail-jquery-prefix"] = array("default"=>"$", "label"=>"jQuery prefix", "type"=>"drop", "description"=>"The jQuery prefix used for jQuery, On some installations you may need to change it to 'jQuery'", "data"=>array("$"=>"$", "jQuery"=>"jQuery"));
 		$this->editFields["settings"]["share-rail-show-on-pages"] = array("default"=>false, "label"=>"Show on pages", "type"=>"check", "description"=>"Do you want this to show on pages?");
 		$this->editFields["settings"]["share-rail-show-on-posts"] = array("default"=>false, "label"=>"Show on posts", "type"=>"check", "description"=>"Do you want this to show on posts?");
 		$this->editFields["settings"]["share-rail-show-on-homepage"] = array("default"=>false, "label"=>"Show on homepage", "type"=>"check", "description"=>"Do you want this to show on the homepage?");
