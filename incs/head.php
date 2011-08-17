@@ -1,5 +1,6 @@
 <?php
 $googlejQueryActive = get_option("share-rail-jquery-use-google", $shareRail->editFields["settings"]["share-rail-jquery-use-google"]["default"]);
+$customCSS = get_option("share-rail-custom-css", $shareRail->editFields["settings"]["share-rail-custom-css"]["default"]);
 
 ?><style>
 #shareRail{
@@ -18,6 +19,7 @@ $googlejQueryActive = get_option("share-rail-jquery-use-google", $shareRail->edi
 #shareRail .railRow{
 	margin-bottom:5px;
 }
+<?php print $customCSS ?>
 </style>
 <?php
 if($googlejQueryActive){

@@ -14,6 +14,8 @@ $twitterActive = get_option("share-rail-twitter-active", $shareRail->editFields[
 $facebookActive = get_option("share-rail-facebook-active", $shareRail->editFields["settings"]["share-rail-facebook-active"]["default"]);
 $googleActive = get_option("share-rail-google-active", $shareRail->editFields["settings"]["share-rail-google-active"]["default"]);
 
+$customContent = get_option("share-rail-custom-content", $shareRail->editFields["settings"]["share-rail-custom-content"]["default"]);
+
 if($twitterActive || $facebookActive || $googleActive){
 ?>
 
@@ -33,6 +35,10 @@ if($twitterActive || $facebookActive || $googleActive){
   <g:plusone size="tall" count="true" href="<?php print $currentURL  ?>"></g:plusone>
 </div>
 <?php } ?>
-
+<?php if(trim($customContent)!=""){ ?>
+<div class="railRow">
+<?php print $customContent ?>
+</div>
+<?php } ?>
 </div>
 <?php } ?>

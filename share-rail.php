@@ -3,7 +3,7 @@
 Plugin Name: Share Rail
 Plugin URI: http://studio.bloafer.com/wordpress-plugins/share-rail/
 Description: Use this plugin to apply floating shares to your posts and pages.
-Version: 0.2
+Version: 0.3
 Author: Kerry James
 Author URI: http://studio.bloafer.com/
 */
@@ -13,7 +13,7 @@ $shareRail = new shareRail();
 
 class shareRail {
 	var $pluginName = "Share Rail";
-	var $version = "0.2";
+	var $version = "0.3";
 	var $nonceField = "";
 	function shareRail(){
 		$this->nonceField = md5($this->pluginName . $this->version);
@@ -28,6 +28,8 @@ class shareRail {
 		$this->editFields["settings"]["share-rail-twitter-username"] = array("default"=>false, "label"=>"Twitter Username", "type"=>"text", "description"=>"The username is required to allow tweets");
 		$this->editFields["settings"]["share-rail-facebook-active"] = array("default"=>false, "label"=>"Show Facebook", "type"=>"check", "description"=>"You can switch the Facebook feed on and off here");
 		$this->editFields["settings"]["share-rail-google-active"] = array("default"=>false, "label"=>"Show Google +1", "type"=>"check", "description"=>"You can switch the Google +1 feed on and off here");
+		$this->editFields["settings"]["share-rail-custom-content"] = array("default"=>false, "label"=>"Custom content", "type"=>"textarea", "description"=>"You can add your own custom content to the bottom of the rail by using this box");
+		$this->editFields["settings"]["share-rail-custom-css"] = array("default"=>false, "label"=>"Custom CSS", "type"=>"textarea", "description"=>"You can add your own CSS here");
 
 		add_action('admin_menu', array(&$this, 'hook_admin_menu'));
 		add_action('wp_footer', array(&$this, 'hook_wp_footer'));
