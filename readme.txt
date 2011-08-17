@@ -42,7 +42,7 @@ This section describes how to install the plugin and get it working.
 * Updated settings page
 * Added options to Share Rail
 * jQuery modifications added, these allow more flexability
-* Added screenshots tas requested
+* Added screenshots as requested
 
 = 0.1 =
 
