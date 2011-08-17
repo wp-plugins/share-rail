@@ -66,14 +66,16 @@ $random = rand(111111, 999999);
   </form>
   <div class="icon32" id="icon-users"><br></div><h2>Do you like this? show your love :)</h2>
   <p>
-  
-<iframe id="tweet_frame_<?php print $random ?>" name="tweet_frame_<?php print $random ?>" class="twitter-share-button" allowtransparency="true" frameborder="0" role="presentation" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=<?php print urlencode("http://studio.bloafer.com/wordpress-plugins/share-rail/")  ?>&via=Bloafer&text=Im using Share Rail for Wordpress, its cool&count=vertical" width="55" height="63"></iframe>
-<g:plusone size="tall" count="true" href="http://studio.bloafer.com/wordpress-plugins/share-rail/"></g:plusone>
-<fb:like href="http://studio.bloafer.com/wordpress-plugins/share-rail/" layout="box_count"></fb:like>
-<div id="shareRail_susphb"></div>
-<script type="in/share" data-url="http://studio.bloafer.com/wordpress-plugins/share-rail/" data-counter="top"></script>
-
-<div id="fb-root"></div>
+  <table>
+    <tr>
+      <td><iframe id="tweet_frame_<?php print $random ?>" name="tweet_frame_<?php print $random ?>" class="twitter-share-button" allowtransparency="true" frameborder="0" role="presentation" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=<?php print urlencode("http://studio.bloafer.com/wordpress-plugins/share-rail/")  ?>&via=Bloafer&text=Im using Share Rail for Wordpress, its cool&count=vertical" width="55" height="63"></iframe></td>
+      <td><g:plusone size="tall" count="true" href="http://studio.bloafer.com/wordpress-plugins/share-rail/"></g:plusone></td>
+      <td><fb:like href="http://studio.bloafer.com/wordpress-plugins/share-rail/" layout="box_count"></fb:like></td>
+      <td><div id="shareRail_susphb"></div></td>
+      <td><script type="in/share" data-url="http://studio.bloafer.com/wordpress-plugins/share-rail/" data-counter="top"></script></td>
+    </tr>
+  </table>
+  <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js#appId=248371728526501&amp;xfbml=1"></script>
 <script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
 <script type="text/javascript">
