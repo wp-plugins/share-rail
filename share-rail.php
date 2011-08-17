@@ -85,7 +85,7 @@ class shareRail {
 			include "incs/footer.php";
 			$footer = ob_get_contents();
 			ob_end_clean();
-			print $footer . $rail;
+			print $rail . $footer;
 		}
 	}
 }
