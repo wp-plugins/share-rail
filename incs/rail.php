@@ -49,7 +49,7 @@ if($twitterActive || $facebookActive || $googleActive){
 <?php } ?>
 <?php if(trim($customContent)!=""){ ?>
 <div class="railRow">
-<?php print $customContent ?>
+<?php print stripslashes($customContent) ?>
 </div>
 <?php } ?>
 </div>
