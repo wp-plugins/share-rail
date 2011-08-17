@@ -27,6 +27,11 @@ This section describes how to install the plugin and get it working.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Change the settings on the 'Share Rail' settings page
 
+== Screenshots ==
+
+1. Floating share in its default position
+2. When the user scrolls the share rail stays in view
+
 == Changelog ==
 
 = 0.2b =
@@ -34,6 +39,7 @@ This section describes how to install the plugin and get it working.
 * Updated settings page
 * Added options to Share Rail
 * jQuery modifications added, these allow more flexability
+* Added screenshots tas requested
 
 = 0.1 =
 
