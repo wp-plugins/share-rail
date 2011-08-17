@@ -16,7 +16,7 @@ if(trim($jQueryPrefix)==""){
 	$jQueryPrefix = "$";
 }
 ?>
-<!-- Share Rail from Bloafer http://studio.bloafer.com/wordpress-plugins/share-rail/ -->
+<!-- Share Rail v<?php print $shareRail->version ?> from Bloafer http://studio.bloafer.com/wordpress-plugins/share-rail/ -->
 <?php if($facebookActive){ ?>
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js#appId=248371728526501&amp;xfbml=1"></script>
