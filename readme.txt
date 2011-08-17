@@ -7,7 +7,7 @@ Version: 0.2b
 Author: Kerry James
 Author URI: http://studio.bloafer.com/
 Donate link: http://studio.bloafer.com/wordpress-plugins/share-rail/
-Tags: CMS, php
+Tags: Share, Social, Link, Facebook, Google +1, Twitter, Bar
 Requires at least: 3.1.3
 Tested up to: 3.2
 Stable tag: 3.1.3
