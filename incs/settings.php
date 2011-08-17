@@ -70,13 +70,21 @@ $random = rand(111111, 999999);
 <iframe id="tweet_frame_<?php print $random ?>" name="tweet_frame_<?php print $random ?>" class="twitter-share-button" allowtransparency="true" frameborder="0" role="presentation" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=<?php print urlencode("http://studio.bloafer.com/wordpress-plugins/share-rail/")  ?>&via=Bloafer&text=Im using Share Rail for Wordpress, its cool&count=vertical" width="55" height="63"></iframe>
 <g:plusone size="tall" count="true" href="http://studio.bloafer.com/wordpress-plugins/share-rail/"></g:plusone>
 <fb:like href="http://studio.bloafer.com/wordpress-plugins/share-rail/" layout="box_count"></fb:like>
+<div id="shareRail_susphb"></div>
+<script type="in/share" data-url="http://studio.bloafer.com/wordpress-plugins/share-rail/" data-counter="top"></script>
+
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js#appId=248371728526501&amp;xfbml=1"></script>
+<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
 <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
     po.src = 'https://apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	var stscr = document.createElement('script'); stscr.type = 'text/javascript'; stscr.async = 'true';
+	stscr.src ='http://www.stumbleupon.com/hostedbadge.php?s=5&r=<?php print urlencode("http://studio.bloafer.com/wordpress-plugins/share-rail/") ?>&a=1&d=shareRail_susphb';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(stscr, s);
   })();
 </script>
 
