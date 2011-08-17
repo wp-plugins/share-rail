@@ -31,7 +31,7 @@ This section describes how to install the plugin and get it working.
 
 = 0.2b =
 
-* Updated setings page
+* Updated settings page
 * Added options to Share Rail
 * jQuery modifications added, these allow more flexability
 
