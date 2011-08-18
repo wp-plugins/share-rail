@@ -44,7 +44,7 @@ $random = rand(111111, 999999);
 			  ?>
             </select>
           <?php }elseif($editValue["type"]=="textarea"){ ?>
-            <textarea cols="30" rows="5" id="<?php print $editField ?>" name="<?php print $editField ?>"><?php echo $$editField; ?></textarea>
+            <textarea cols="30" rows="5" id="<?php print $editField ?>" name="<?php print $editField ?>"><?php echo stripslashes($$editField); ?></textarea>
           <?php }elseif($editValue["type"]=="warn"){ ?>
             &nbsp;
           <?php }else{ ?>
