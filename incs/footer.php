@@ -78,7 +78,7 @@ if(trim($verticalOffset)==""){ $verticalOffset = 10; }
 		FB.Event.subscribe('message.send', function(targetUrl) { _gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]); });
 <?php 	} ?>
 <?php 	if($twitterActive){ ?>
-		twttr.events.bind('tweet', function(event) { if (event) { _gaq.push(['_trackSocial', 'twitter', 'tweet', '<?php print $currentURL ?>']); } });
+//		twttr.events.bind('tweet', function(event) { if (event) { _gaq.push(['_trackSocial', 'twitter', 'tweet', '<?php print $currentURL ?>']); } });
 <?php 	} ?>
 <?php } ?>
 });
