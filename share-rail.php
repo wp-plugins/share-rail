@@ -3,7 +3,7 @@
 Plugin Name: Share Rail
 Plugin URI: http://studio.bloafer.com/wordpress-plugins/share-rail/
 Description: Use this plugin to apply floating shares to your posts and pages.
-Version: 0.5
+Version: 0.6
 Author: Kerry James
 Author URI: http://studio.bloafer.com/
 */
@@ -13,7 +13,7 @@ $shareRail = new shareRail();
 
 class shareRail {
 	var $pluginName = "Share Rail";
-	var $version = "0.5";
+	var $version = "0.6";
 	var $nonceField = "";
 	function shareRail(){
 		$this->nonceField = md5($this->pluginName . $this->version);
@@ -27,6 +27,7 @@ class shareRail {
 		$this->editFields["settings"]["share-rail-twitter-active"] = array("default"=>false, "label"=>"Show Twitter", "type"=>"check", "description"=>"You can switch the Twitter feed on and off here");
 		$this->editFields["settings"]["share-rail-twitter-username"] = array("default"=>false, "label"=>"Twitter Username", "type"=>"text", "description"=>"The username is required to allow tweets");
 		$this->editFields["settings"]["share-rail-facebook-active"] = array("default"=>false, "label"=>"Show Facebook", "type"=>"check", "description"=>"You can switch the Facebook feed on and off here");
+		$this->editFields["settings"]["share-rail-google-analytics-social"] = array("default"=>false, "label"=>"Use Google Social Interaction Analytics", "type"=>"check", "description"=>"If you have Google Analytics installed you can use this to track social interactions");
 		$this->editFields["settings"]["share-rail-google-active"] = array("default"=>false, "label"=>"Show Google +1", "type"=>"check", "description"=>"You can switch the Google +1 feed on and off here");
 		$this->editFields["settings"]["share-rail-google-load"] = array("default"=>true, "label"=>"Load Google +1 API", "type"=>"check", "description"=>"You can switch the Google +1 API on and off here, if you already have a Google +1 plugin running untick this");
 		$this->editFields["settings"]["share-rail-stumble-active"] = array("default"=>false, "label"=>"Show Stumble Upon", "type"=>"check", "description"=>"You can switch the Stumble Upon feed on and off here");

@@ -6,9 +6,13 @@ $currentURL = "http" . (($_SERVER["SERVER_PORT"]==443)?"s":"") . "://" . $_SERVE
 $jQueryAttachment = get_option("share-rail-class-attachment", $shareRail->editFields["settings"]["share-rail-class-attachment"]["default"]);
 
 $googleActive = get_option("share-rail-google-active", $shareRail->editFields["settings"]["share-rail-google-active"]["default"]);
+$twitterActive = get_option("share-rail-twitter-active", $shareRail->editFields["settings"]["share-rail-twitter-active"]["default"]);
 $stumbleActive = get_option("share-rail-stumble-active", $shareRail->editFields["settings"]["share-rail-stumble-active"]["default"]);
 $facebookActive = get_option("share-rail-facebook-active", $shareRail->editFields["settings"]["share-rail-facebook-active"]["default"]);
 $linkedinActive = get_option("share-rail-linkedin-active", $shareRail->editFields["settings"]["share-rail-linkedin-active"]["default"]);
+
+$googleSocialActive = get_option("share-rail-google-analytics-social", $shareRail->editFields["settings"]["share-rail-google-analytics-social"]["default"]);
+
 
 
 $googleLoad = get_option("share-rail-google-load", $shareRail->editFields["settings"]["share-rail-google-load"]["default"]);
@@ -67,6 +71,16 @@ if(trim($verticalOffset)==""){ $verticalOffset = 10; }
 			});
 		}
 	}
+<?php if($googleSocialActive){ ?>
+<?php 	if($facebookActive){ ?>
+		FB.Event.subscribe('edge.create', function(targetUrl) { _gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]); });
+		FB.Event.subscribe('edge.remove', function(targetUrl) { _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]); });
+		FB.Event.subscribe('message.send', function(targetUrl) { _gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]); });
+<?php 	} ?>
+<?php 	if($twitterActive){ ?>
+		twttr.events.bind('tweet', function(event) { if (event) { _gaq.push(['_trackSocial', 'twitter', 'tweet', '<?php print $currentURL ?>']); } });
+<?php 	} ?>
+<?php } ?>
 });
 </script>
 
