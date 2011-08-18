@@ -24,7 +24,7 @@ if($twitterActive || $facebookActive || $googleActive){
 <div id="shareRail">
 <?php if(trim($twitterUsername)!="" && $twitterActive){ ?>
 <div class="railRow">
-  <iframe id="tweet_frame_<?php print $random ?>" name="tweet_frame_<?php print $random ?>" class="twitter-share-button" allowtransparency="true" frameborder="0" role="presentation" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=<?php print urlencode($currentURL)  ?>&via=<?php print $twitterUsername ?>&text=<?php print $pageTitle ?>&count=vertical" width="55" height="63"></iframe>
+  <a href="http://twitter.com/share" data-url="<?php print $currentURL ?>" data-count="vertical" data-via="<?php print $twitterUsername ?>" data-text="<?php print $pageTitle ?>" data-counturl="<?php print $currentURL ?>" class="twitter-share-button">Tweet</a>
 </div>
 <?php } ?>
 <?php if($facebookActive){ ?>

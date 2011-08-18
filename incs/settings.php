@@ -68,7 +68,7 @@ $random = rand(111111, 999999);
   <p>
   <table>
     <tr>
-      <td><iframe id="tweet_frame_<?php print $random ?>" name="tweet_frame_<?php print $random ?>" class="twitter-share-button" allowtransparency="true" frameborder="0" role="presentation" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=<?php print urlencode("http://studio.bloafer.com/wordpress-plugins/share-rail/")  ?>&via=Bloafer&text=Im using Share Rail for Wordpress, its cool&count=vertical" width="55" height="63"></iframe></td>
+      <td><a href="http://twitter.com/share" data-url="http://studio.bloafer.com/wordpress-plugins/share-rail/" data-count="vertical" data-via="Bloafer" data-text="Im using Share Rail for Wordpress, its cool" data-counturl="http://studio.bloafer.com/wordpress-plugins/share-rail/" class="twitter-share-button">Tweet</a></td>
       <td><g:plusone size="tall" count="true" href="http://studio.bloafer.com/wordpress-plugins/share-rail/"></g:plusone></td>
       <td><fb:like href="http://studio.bloafer.com/wordpress-plugins/share-rail/" layout="box_count"></fb:like></td>
       <td><div id="shareRail_susphb"></div></td>
@@ -76,8 +76,9 @@ $random = rand(111111, 999999);
     </tr>
   </table>
   <div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js#appId=248371728526501&amp;xfbml=1"></script>
-<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
 <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;

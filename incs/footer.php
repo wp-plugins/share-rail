@@ -29,7 +29,7 @@ if(trim($verticalOffset)==""){ $verticalOffset = 10; }
 <!-- Share Rail v<?php print $shareRail->version ?> from Bloafer http://studio.bloafer.com/wordpress-plugins/share-rail/ -->
 <?php if($facebookActive){ ?>
 <div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js#appId=248371728526501&amp;xfbml=1"></script>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 <?php } ?>
 <?php if($linkedinActive){ ?>
 <script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
@@ -73,19 +73,16 @@ if(trim($verticalOffset)==""){ $verticalOffset = 10; }
 	}
 <?php if($googleSocialActive){ ?>
 <?php 	if($facebookActive){ ?>
-//		FB.Event.subscribe('edge.create', function(targetUrl) { _gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]); });
-//		FB.Event.subscribe('edge.remove', function(targetUrl) { _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]); });
-//		FB.Event.subscribe('message.send', function(targetUrl) { _gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]); });
+	FB.Event.subscribe('edge.create', function(targetUrl) { _gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]); });
+	FB.Event.subscribe('message.send', function(targetUrl) { _gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]); });
+	FB.Event.subscribe('edge.remove', function(targetUrl) { _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]); });
 <?php 	} ?>
 <?php 	if($twitterActive){ ?>
-//		var twitterWidgets = document.createElement('script');
-//		twitterWidgets.type = 'text/javascript';
-//		twitterWidgets.async = true;
-//		twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-//		// Setup a callback to track once the script loads.
-//		twitterWidgets.onload = _ga.trackTwitter;
-//		document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-////		twttr.events.bind('tweet', function(event) { if (event) { _gaq.push(['_trackSocial', 'twitter', 'tweet', '<?php print $currentURL ?>']); } });
+	twttr.events.bind('tweet', function(event) {
+		if (event) {
+			_gaq.push(['_trackSocial', 'twitter', 'tweet', '<?php print $currentURL ?>']);
+		}
+	});
 <?php 	} ?>
 <?php } ?>
 });
