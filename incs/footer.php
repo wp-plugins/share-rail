@@ -26,7 +26,7 @@ if(trim($googleLoad)==""){ $googleLoad = true; }
 if(trim($jQueryPrefix)==""){ $jQueryPrefix = "$"; }
 if(trim($verticalOffset)==""){ $verticalOffset = 10; }
 ?>
-<!-- Share Rail v<?php print $shareRail->version ?> from Bloafer http://studio.bloafer.com/wordpress-plugins/share-rail/ -->
+<!-- Share Rail v<?php print $shareRail->version ?> from Bloafer http://studio.bloafer.com/wordpress-plugins/share-rail/ (<?php print $shareRail->gcX ?>,<?php print $shareRail->gcY ?>) -->
 <?php if($facebookActive){ ?>
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
