@@ -25,7 +25,8 @@ This section describes how to install the plugin and get it working.
 
 1. Upload 'share-rail' to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Change the settings on the 'Share Rail' settings page
+3. Find the ID or the Class you want to attach the rail to
+3. Change the settings on the 'Share Rail' settings page, "Element Class attachment" needs to be changed to the correct ID or class
 
 == Screenshots ==
 
@@ -35,7 +36,7 @@ This section describes how to install the plugin and get it working.
 == Changelog ==
 
 = 0.8 =
-* Added link to Share Rail Custom CSS Engine
+* Added link to <a href="http://studio.bloafer.com/wordpress-plugins/share-rail/share-rail-custom-css-engine/">Share Rail Custom CSS Engine</a>
 = 0.7 =
 * Improved Twitter feed to follow current standards
 * Fixed GA Social Interaction Analytics (Facebook)
