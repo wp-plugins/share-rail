@@ -50,10 +50,55 @@ $random = rand(111111, 999999);
           <?php }else{ ?>
             Incorrect settings field (<?php print $editField ?>)
           <?php } ?>
-          
+          <?php
+          if($editField=="share-rail-class-attachment"){
+				$args = array(
+					'numberposts' => 1,
+					'suppress_filters' => false
+				);
+			  $lastPost = wp_get_recent_posts( $args );
+			  if($lastPost){
+			  
+		  ?>
+          <a href="#" id="share-rail-class-attachment-button">Prediction</a>
+          <style>
+		  #share-rail-class-attachment-button{
+			  text-indent:-1000px;
+			  overflow:hidden;
+			  display:inline-block;
+			  *display:inline;
+			  height:16px;
+			  width:16px;
+			  background:url(<?php print plugins_url('share-rail/img/wand.png') ?>) no-repeat top left;
+		  }
+		  </style>
+          <script>
+jQuery(document).ready(function(){
+	jQuery("#share-rail-class-attachment-button").click(function(){
+		jQuery.post('<?php print get_permalink($lastPost[0]["ID"]) ?>', function(data){
+			var homePage = jQuery(data);
+			if(jQuery("input[name=share-rail-class-attachment]").val()!="#" + homePage.find(".post").parent().attr("id")){
+				jQuery("input[name=share-rail-class-attachment]").parent().find(".ajaxMessage").hide().html("We have scanned your site and think the attachment class should be <a href=\"#\" class=\"pushTo\">#" + homePage.find(".post").parent().attr("id") + "</a>, please click the link to use this.").slideDown("slow");
+				jQuery(".pushTo").click(function(){
+					jQuery("input[name=share-rail-class-attachment]").val("#" + homePage.find(".post").parent().attr("id"));
+					return false;
+				});
+			}else{
+				jQuery("input[name=share-rail-class-attachment]").parent().find(".ajaxMessage").hide().html("You are already using the Element Class attachment that we would use.").slideDown("slow");
+			}
+		});
+		return false;
+	});
+});
+		  </script>
+		  <?php
+			  }
+          }
+		  ?>
           <?php if(isset($editValue["description"])){ ?>
             <span class="description"><?php print $editValue["description"] ?></span>
           <?php } ?>
+          <div class="ajaxMessage"></div>
           </td>
         </tr>
 <?php
@@ -71,25 +116,9 @@ $random = rand(111111, 999999);
       <td><a href="http://twitter.com/share" data-url="http://studio.bloafer.com/wordpress-plugins/share-rail/" data-count="vertical" data-via="Bloafer" data-text="Im using Share Rail for Wordpress, its cool" data-counturl="http://studio.bloafer.com/wordpress-plugins/share-rail/" class="twitter-share-button">Tweet</a></td>
       <td><g:plusone size="tall" count="true" href="http://studio.bloafer.com/wordpress-plugins/share-rail/"></g:plusone></td>
       <td><fb:like href="http://studio.bloafer.com/wordpress-plugins/share-rail/" layout="box_count"></fb:like></td>
-      <td><div id="shareRail_susphb"></div></td>
       <td><script type="in/share" data-url="http://studio.bloafer.com/wordpress-plugins/share-rail/" data-counter="top"></script></td>
     </tr>
   </table>
   <div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-	var stscr = document.createElement('script'); stscr.type = 'text/javascript'; stscr.async = 'true';
-	stscr.src ='http://www.stumbleupon.com/hostedbadge.php?s=5&r=<?php print urlencode("http://studio.bloafer.com/wordpress-plugins/share-rail/") ?>&a=1&d=shareRail_susphb';
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(stscr, s);
-  })();
-</script>
-
   </p>
 

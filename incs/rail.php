@@ -1,12 +1,5 @@
 <?php
-$currentURL = "http" . (($_SERVER["SERVER_PORT"]==443)?"s":"") . "://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-$pageTitle = get_the_title();
-
 $random = rand(111111, 999999);
-
-if(trim($pageTitle)==""){
-	$pageTitle = get_bloginfo('name');
-}
 
 $twitterUsername = get_option("share-rail-twitter-username", $shareRail->editFields["settings"]["share-rail-twitter-username"]["default"]);
 
@@ -18,7 +11,7 @@ $linkedinActive = get_option("share-rail-linkedin-active", $shareRail->editField
 
 $customContent = get_option("share-rail-custom-content", $shareRail->editFields["settings"]["share-rail-custom-content"]["default"]);
 
-if($twitterActive || $facebookActive || $googleActive){
+if($twitterActive || $facebookActive || $googleActive || $stumbleActive || $linkedinActive){
 ?>
 
 <div id="shareRail">

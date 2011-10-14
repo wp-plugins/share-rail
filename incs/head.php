@@ -1,11 +1,5 @@
 <?php
-$googlejQueryActive = get_option("share-rail-jquery-use-google", $shareRail->editFields["settings"]["share-rail-jquery-use-google"]["default"]);
 $customCSS = get_option("share-rail-custom-css", $shareRail->editFields["settings"]["share-rail-custom-css"]["default"]);
-
-
-$twitterUsername = get_option("share-rail-twitter-username", $shareRail->editFields["settings"]["share-rail-twitter-username"]["default"]);
-$twitterActive = get_option("share-rail-twitter-active", $shareRail->editFields["settings"]["share-rail-twitter-active"]["default"]);
-
 ?><style>
 #shareRail{
 	position:absolute;
@@ -16,6 +10,8 @@ $twitterActive = get_option("share-rail-twitter-active", $shareRail->editFields[
 	border:solid 1px #E9E9E9;
 	z-index:101;
 	padding:2px;
+	padding-top:6px;
+	padding-bottom:0px;
 	text-align:center;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -23,11 +19,15 @@ $twitterActive = get_option("share-rail-twitter-active", $shareRail->editFields[
 #shareRail .railRow{
 	margin-bottom:5px;
 }
-<?php print $customCSS ?>
+#shareRail .railRow{
+	margin-bottom:0px;
+}
+#shareRail .railRow .fb_iframe_widget iframe{
+	width:45px !important;
+}
+<?php
+print $customCSS;
+$debug = get_option("share-rail-debug-active", $shareRail->editFields["settings"]["share-rail-custom-css"]["default"]);
+if($debug){ if(isset($_GET["sr"]["css"])){ print $_GET["sr"]["css"]; }}
+?>
 </style>
-<?php if($googlejQueryActive){ ?>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<?php } ?>
-<?php if(trim($twitterUsername)!="" && $twitterActive){ ?>
-  <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-<?php } ?>

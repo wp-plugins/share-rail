@@ -23,32 +23,18 @@ $verticalOffset = get_option("share-rail-vertical-offset", $shareRail->editField
 $jQueryPrefix = get_option("share-rail-jquery-prefix", $shareRail->editFields["settings"]["share-rail-jquery-prefix"]["default"]);
 
 if(trim($googleLoad)==""){ $googleLoad = true; }
-if(trim($jQueryPrefix)==""){ $jQueryPrefix = "$"; }
+if(trim($jQueryPrefix)==""){ $jQueryPrefix = $shareRail->jQueryDefaultPrefix; }
 if(trim($verticalOffset)==""){ $verticalOffset = 10; }
 ?>
 <!-- Share Rail v<?php print $shareRail->version ?> from Bloafer http://studio.bloafer.com/wordpress-plugins/share-rail/ (<?php print $shareRail->gcX ?>,<?php print $shareRail->gcY ?>) -->
 <?php if($facebookActive){ ?>
 <div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 <?php } ?>
-<?php if($linkedinActive){ ?>
-<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
-<?php } ?>
-
+<?php
+$debug = get_option("share-rail-debug-active", $shareRail->editFields["settings"]["share-rail-custom-css"]["default"]);
+if($debug){ if(isset($_GET["sr"]["hook"])){ $jQueryAttachment = $_GET["sr"]["hook"]; }}
+?>
 <script type="text/javascript">
-  (function() {
-<?php if($googleActive && $googleLoad){ ?>
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-<?php } ?>
-<?php if($stumbleActive){ ?>
-	var stscr = document.createElement('script'); stscr.type = 'text/javascript'; stscr.async = 'true';
-	stscr.src ='http://www.stumbleupon.com/hostedbadge.php?s=5&r=<?php print urlencode($currentURL) ?>&a=1&d=shareRail_suhb';
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(stscr, s);
-<?php } ?>
-  })();
 <?php print $jQueryPrefix ?>(document).ready(function(){
 	if(<?php print $jQueryPrefix ?>("#shareRail").length>=1){
 		var attachmentContainer = <?php print $jQueryPrefix ?>("<?php print $jQueryAttachment ?>");
@@ -87,5 +73,4 @@ if(trim($verticalOffset)==""){ $verticalOffset = 10; }
 <?php } ?>
 });
 </script>
-
-
+<?php if($stumbleActive){ ?><script type='text/javascript' src='http://www.stumbleupon.com/hostedbadge.php?s=5&a=1&d=shareRail_suhb'></script><?php } ?>
