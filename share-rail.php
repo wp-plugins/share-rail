@@ -3,7 +3,7 @@
 Plugin Name: Share Rail
 Plugin URI: http://studio.bloafer.com/wordpress-plugins/share-rail/
 Description: Use this plugin to apply floating shares to your posts and pages.
-Version: 0.8
+Version: 0.9
 Author: Kerry James
 Author URI: http://studio.bloafer.com/
 */
@@ -13,9 +13,9 @@ $shareRail = new shareRail();
 
 class shareRail {
 	var $pluginName = "Share Rail";
-	var $version = "0.8";
+	var $version = "0.9";
 	var $gcX = "541";
-	var $gcY = "982";
+	var $gcY = "942";
 	var $nonceField = "";
 	function shareRail(){
 		$this->nonceField = md5($this->pluginName . $this->version);

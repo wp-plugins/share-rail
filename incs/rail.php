@@ -24,17 +24,17 @@ if($twitterActive || $facebookActive || $googleActive){
 <div id="shareRail">
 <?php if(trim($twitterUsername)!="" && $twitterActive){ ?>
 <div class="railRow">
-  <a href="http://twitter.com/share" data-url="<?php print $currentURL ?>" data-count="vertical" data-via="<?php print $twitterUsername ?>" data-text="<?php print $pageTitle ?>" data-counturl="<?php print $currentURL ?>" class="twitter-share-button">Tweet</a>
+  <a href="http://twitter.com/share" data-count="vertical" data-via="<?php print $twitterUsername ?>" class="twitter-share-button">Tweet</a>
 </div>
 <?php } ?>
 <?php if($facebookActive){ ?>
 <div class="railRow">
-  <fb:like href="<?php print $currentURL ?>" layout="box_count"></fb:like>
+  <fb:like layout="box_count"></fb:like>
 </div>
 <?php } ?>
 <?php if($googleActive){ ?>
 <div class="railRow">
-  <g:plusone size="tall" count="true" href="<?php print $currentURL  ?>"></g:plusone>
+  <g:plusone size="tall" count="true"></g:plusone>
 </div>
 <?php } ?>
 <?php if($stumbleActive){ ?>
@@ -44,7 +44,7 @@ if($twitterActive || $facebookActive || $googleActive){
 <?php } ?>
 <?php if($linkedinActive){ ?>
 <div class="railRow">
-  <script type="in/share" data-url="<?php print $currentURL  ?>" data-counter="top"></script>
+  <script type="in/share" data-counter="top"></script>
 </div>
 <?php } ?>
 <?php if(trim($customContent)!=""){ ?>
