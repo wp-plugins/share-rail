@@ -8,6 +8,7 @@ $twitterActive = get_option("share-rail-twitter-active", $shareRail->editFields[
 $stumbleActive = get_option("share-rail-stumble-active", $shareRail->editFields["settings"]["share-rail-stumble-active"]["default"]);
 $facebookActive = get_option("share-rail-facebook-active", $shareRail->editFields["settings"]["share-rail-facebook-active"]["default"]);
 $linkedinActive = get_option("share-rail-linkedin-active", $shareRail->editFields["settings"]["share-rail-linkedin-active"]["default"]);
+$pintrestActive = get_option("share-rail-pintrest-active", $shareRail->editFields["settings"]["share-rail-pintrest-active"]["default"]);
 
 $customContent = get_option("share-rail-custom-content", $shareRail->editFields["settings"]["share-rail-custom-content"]["default"]);
 
@@ -38,6 +39,11 @@ if($twitterActive || $facebookActive || $googleActive || $stumbleActive || $link
 <?php if($linkedinActive){ ?>
 <div class="railRow">
   <script type="in/share" data-counter="top"></script>
+</div>
+<?php } ?>
+<?php if($pintrestActive){ ?>
+<div class="railRow">
+  <a href="http://pinterest.com/pin/create/button/" class="pin-it-button" count-layout="vertical"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
 </div>
 <?php } ?>
 <?php if(trim($customContent)!=""){ ?>

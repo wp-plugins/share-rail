@@ -3,7 +3,7 @@
 Plugin Name: Share Rail
 Plugin URI: http://studio.bloafer.com/wordpress-plugins/share-rail/
 Description: Use this plugin to apply floating shares to your posts and pages.
-Version: 1.0
+Version: 1.1
 Author: Kerry James
 Author URI: http://studio.bloafer.com/
 */
@@ -35,6 +35,7 @@ class shareRail {
 		$this->editFields["settings"]["share-rail-google-load"] = array("default"=>true, "label"=>"Load Google +1 API", "type"=>"check", "description"=>"You can switch the Google +1 API on and off here, if you already have a Google +1 plugin running untick this");
 		$this->editFields["settings"]["share-rail-stumble-active"] = array("default"=>false, "label"=>"Show Stumble Upon", "type"=>"check", "description"=>"You can switch the Stumble Upon feed on and off here");
 		$this->editFields["settings"]["share-rail-linkedin-active"] = array("default"=>false, "label"=>"Show LinkedIn", "type"=>"check", "description"=>"You can switch the LinkedIn feed on and off here");
+		$this->editFields["settings"]["share-rail-pintrest-active"] = array("default"=>false, "label"=>"Show pintrest", "type"=>"check", "description"=>"You can switch the pintrest feed on and off here");
 		$this->editFields["settings"]["share-rail-custom-content"] = array("default"=>false, "label"=>"Custom content", "type"=>"textarea", "description"=>"You can add your own custom content to the bottom of the rail by using this box");
 		$this->editFields["settings"]["share-rail-custom-css"] = array("default"=>false, "label"=>"Custom CSS", "type"=>"textarea", "description"=>"You can add your own CSS here");
 		$this->editFields["settings"]["share-rail-debug-active"] = array("default"=>false, "label"=>"Debug Option", "type"=>"check", "description"=>"This option will allow Bloafer developers to debug your plugin, by default this off");
@@ -132,7 +133,6 @@ class shareRail {
 		$stumbleActive = get_option("share-rail-stumble-active", $shareRail->editFields["settings"]["share-rail-stumble-active"]["default"]);
 		$facebookActive = get_option("share-rail-facebook-active", $shareRail->editFields["settings"]["share-rail-facebook-active"]["default"]);
 		$linkedinActive = get_option("share-rail-linkedin-active", $shareRail->editFields["settings"]["share-rail-linkedin-active"]["default"]);
-	
 		$googleLoad = get_option("share-rail-google-load", $shareRail->editFields["settings"]["share-rail-google-load"]["default"]);
 
 		$googlejQueryActive = get_option("share-rail-jquery-use-google", $shareRail->editFields["settings"]["share-rail-jquery-use-google"]["default"]);
