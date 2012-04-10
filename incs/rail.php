@@ -1,6 +1,8 @@
 <?php
 $random = rand(111111, 999999);
 
+$currentURL = "http" . (($_SERVER["SERVER_PORT"]==443)?"s":"") . "://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+
 $twitterUsername = get_option("share-rail-twitter-username", $shareRail->editFields["settings"]["share-rail-twitter-username"]["default"]);
 
 $googleActive = get_option("share-rail-google-active", $shareRail->editFields["settings"]["share-rail-google-active"]["default"]);
@@ -43,7 +45,7 @@ if($twitterActive || $facebookActive || $googleActive || $stumbleActive || $link
 <?php } ?>
 <?php if($pintrestActive){ ?>
 <div class="railRow">
-  <a href="http://pinterest.com/pin/create/button/" class="pin-it-button" count-layout="vertical"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
+  <a href="http://pinterest.com/pin/create/button/?url=<?php print urlencode($currentURL); ?>" class="pin-it-button" count-layout="vertical"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
 </div>
 <?php } ?>
 <?php if(trim($customContent)!=""){ ?>

@@ -10,7 +10,7 @@ $twitterActive = get_option("share-rail-twitter-active", $shareRail->editFields[
 $stumbleActive = get_option("share-rail-stumble-active", $shareRail->editFields["settings"]["share-rail-stumble-active"]["default"]);
 $facebookActive = get_option("share-rail-facebook-active", $shareRail->editFields["settings"]["share-rail-facebook-active"]["default"]);
 $linkedinActive = get_option("share-rail-linkedin-active", $shareRail->editFields["settings"]["share-rail-linkedin-active"]["default"]);
-$pintrestActive = get_option("share-rail-pintrest-active", $shareRail->editFields["settings"]["share-rail-pintrest-active"]["default"]);
+$pinterestActive = get_option("share-rail-pinterest-active", $shareRail->editFields["settings"]["share-rail-pinterest-active"]["default"]);
 
 $googleSocialActive = get_option("share-rail-google-analytics-social", $shareRail->editFields["settings"]["share-rail-google-analytics-social"]["default"]);
 
@@ -75,5 +75,5 @@ if($debug){ if(isset($_GET["sr"]["hook"])){ $jQueryAttachment = $_GET["sr"]["hoo
 });
 </script>
 <?php if($stumbleActive){ ?><script type='text/javascript' src='http://www.stumbleupon.com/hostedbadge.php?s=5&a=1&d=shareRail_suhb'></script><?php } ?>
-<?php if($pintrestActive){ ?><script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script><?php } ?>
+<?php if($pinterestActive){ ?><script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script><?php } ?>
 

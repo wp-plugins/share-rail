@@ -3,7 +3,7 @@
 Plugin Name: Share Rail
 Plugin URI: http://studio.bloafer.com/wordpress-plugins/share-rail/
 Description: Use this plugin to apply floating shares to your posts and pages.
-Version: 1.1
+Version: 1.2
 Author: Kerry James
 Author URI: http://studio.bloafer.com/
 */
@@ -13,9 +13,9 @@ $shareRail = new shareRail();
 
 class shareRail {
 	var $pluginName = "Share Rail";
-	var $version = "1.0";
+	var $version = "1.2";
 	var $gcX = "571";
-	var $gcY = "942";
+	var $gcY = "922";
 	var $nonceField = "";
 	var $jQueryDefaultPrefix = "jQuery";
 	function shareRail(){
@@ -35,7 +35,7 @@ class shareRail {
 		$this->editFields["settings"]["share-rail-google-load"] = array("default"=>true, "label"=>"Load Google +1 API", "type"=>"check", "description"=>"You can switch the Google +1 API on and off here, if you already have a Google +1 plugin running untick this");
 		$this->editFields["settings"]["share-rail-stumble-active"] = array("default"=>false, "label"=>"Show Stumble Upon", "type"=>"check", "description"=>"You can switch the Stumble Upon feed on and off here");
 		$this->editFields["settings"]["share-rail-linkedin-active"] = array("default"=>false, "label"=>"Show LinkedIn", "type"=>"check", "description"=>"You can switch the LinkedIn feed on and off here");
-		$this->editFields["settings"]["share-rail-pintrest-active"] = array("default"=>false, "label"=>"Show pintrest", "type"=>"check", "description"=>"You can switch the pintrest feed on and off here");
+		$this->editFields["settings"]["share-rail-pinterest-active"] = array("default"=>false, "label"=>"Show Pinterest", "type"=>"check", "description"=>"You can switch the Pinterest feed on and off here");
 		$this->editFields["settings"]["share-rail-custom-content"] = array("default"=>false, "label"=>"Custom content", "type"=>"textarea", "description"=>"You can add your own custom content to the bottom of the rail by using this box");
 		$this->editFields["settings"]["share-rail-custom-css"] = array("default"=>false, "label"=>"Custom CSS", "type"=>"textarea", "description"=>"You can add your own CSS here");
 		$this->editFields["settings"]["share-rail-debug-active"] = array("default"=>false, "label"=>"Debug Option", "type"=>"check", "description"=>"This option will allow Bloafer developers to debug your plugin, by default this off");
