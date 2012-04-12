@@ -14,7 +14,7 @@ $pinterestActive = get_option("share-rail-pinterest-active", $shareRail->editFie
 
 $customContent = get_option("share-rail-custom-content", $shareRail->editFields["settings"]["share-rail-custom-content"]["default"]);
 
-if($twitterActive || $facebookActive || $googleActive || $stumbleActive || $linkedinActive){
+if($twitterActive || $facebookActive || $googleActive || $stumbleActive || $linkedinActive || $pinterestActive){
 ?>
 
 <div id="shareRail">

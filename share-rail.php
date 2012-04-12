@@ -13,8 +13,8 @@ $shareRail = new shareRail();
 
 class shareRail {
 	var $pluginName = "Share Rail";
-	var $version = "1.2";
-	var $gcX = "571";
+	var $version = "1.3";
+	var $gcX = "511";
 	var $gcY = "922";
 	var $nonceField = "";
 	var $jQueryDefaultPrefix = "jQuery";
