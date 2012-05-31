@@ -149,7 +149,4 @@ class shareRail {
 		if(trim($twitterUsername)!="" && $twitterActive){ $this->loadScript("twitter_api_core"); }
 	}    
 }
-
- 
->>>>>>> .r550466
 ?>
