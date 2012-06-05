@@ -1,5 +1,5 @@
 <?php
-$customCSS = get_option("share-rail-custom-css", $shareRail->editFields["settings"]["share-rail-custom-css"]["default"]);
+$customCSS = $this->getSetting("custom-css");
 ?><style>
 #shareRail{
 	position:absolute;
@@ -22,14 +22,9 @@ $customCSS = get_option("share-rail-custom-css", $shareRail->editFields["setting
 #shareRail .railRow{
 	margin-bottom:0px;
 }
-/*
-#shareRail .railRow .fb_iframe_widget iframe{
-	width:45px !important;
-}
-*/
 <?php
 print $customCSS;
-$debug = get_option("share-rail-debug-active", $shareRail->editFields["settings"]["share-rail-custom-css"]["default"]);
+$debug = $this->getSetting("debug-active");
 if($debug){ if(isset($_GET["sr"]["css"])){ print $_GET["sr"]["css"]; }}
 ?>
 </style>
