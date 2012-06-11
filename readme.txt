@@ -3,13 +3,13 @@ Contributors: Bloafer
 Plugin Name: Share Rail
 Plugin URI: http://studio.bloafer.com/wordpress-plugins/share-rail/
 Description: Use this plugin to apply floating shares to your posts and pages.
-Version: 2.0
+Version: 2.1
 Author: Kerry James
 Author URI: http://studio.bloafer.com/
 Donate link: http://studio.bloafer.com/wordpress-plugins/share-rail/
-Tags: Share, Social, Link, Like, Facebook, Google +1, Twitter, Bar, Pinterest, sharebar alternative
+Tags: Share, Social, Link, Like, Digg, Tumblr, Reddit, Facebook, Google +1, Twitter, Bar, Pinterest, sharebar alternative
 Requires at least: 3.1.3
-Tested up to: 3.2
+Tested up to: 3.3
 Stable tag: 3.1.3
 
 Use this plugin to apply <a href="http://wordpress.org/extend/plugins/share-rail/screenshots/">floating shares</a> to your posts and pages.
@@ -34,6 +34,11 @@ This section describes how to install the plugin and get it working.
 2. When the user scrolls the share rail stays in view
 
 == Changelog ==
+= 2.1 =
+* Added button sort page :)
+* Added Digg button
+* Added Tumblr button
+* Fixed issue with Pinterest
 = 2.0 =
 * Complete overhaul of the Share Rail plugin
 * Plugin system developed, this makes updating Share Rail sections easy

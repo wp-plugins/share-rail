@@ -1,4 +1,4 @@
-<?php
+<pre><?php
 $customContent = $this->getSetting("custom-content");
 $railRows = $this->getContent("rail", false);
 
@@ -13,3 +13,4 @@ if(count($railRows)>=1){
 	print '</div>' . PHP_EOL;
 }
 ?>
+</pre>

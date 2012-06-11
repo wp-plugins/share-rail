@@ -8,7 +8,7 @@ class shareRail_Pinterest{
     	return $settings;
 	}
 	function footer(){
-		return '<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>';
+		return '<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>';
 	}
 }
 ?>

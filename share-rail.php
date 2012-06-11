@@ -3,7 +3,7 @@
 Plugin Name: Share Rail
 Plugin URI: http://studio.bloafer.com/wordpress-plugins/share-rail/
 Description: Use this plugin to apply floating shares to your posts and pages.
-Version: 2.0
+Version: 2.1
 Author: Kerry James
 Author URI: http://studio.bloafer.com/
 */
@@ -15,15 +15,19 @@ class shareRail {
     var $pluginName             = "Share Rail";
     var $settingNamespace       = "share-rail";
     var $pluginNamespace        = "shareRail";
-    var $version                = "2.0";
+    var $version                = "2.1";
     var $gcX                    = "200";
-    var $gcY                    = "001";
+    var $gcY                    = "002";
     var $nonceField             = "";
     var $jQueryDefaultPrefix    = "jQuery";
     var $outputs                = array();
     var $outputAreas            = array("header", "headerScript", "rail", "footer", "footerScript");
     function getPlugins(){
         $pluginPath = realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR . "plugin" . DIRECTORY_SEPARATOR;
+        $savedOrder = json_decode(stripslashes(get_option("itemorder")), true);
+        foreach($savedOrder as $key=>$val){
+            $plugins[$val] = $key;  
+        }
         if($handle = opendir($pluginPath)) {
             while (false !== ($entry = readdir($handle))) {
                 if ($entry != "." && $entry != "..") {
@@ -54,7 +58,11 @@ class shareRail {
                             }
                             foreach($this->outputAreas as $outputArea){
                                 if(method_exists($tempClass, $outputArea)){
-                                    $this->addContent($outputArea, $tempClass->$outputArea(array(), $this));
+                                    if($outputArea=="rail"){
+                                        $plugins[strtolower($driverName)] = $tempClass->$outputArea(array(), $this);
+                                    }else{
+                                        $this->addContent($outputArea, $tempClass->$outputArea(array(), $this));
+                                    }
                                 }
                             }
                         }
@@ -62,6 +70,9 @@ class shareRail {
                 }
             }
             closedir($handle);
+        }
+        foreach($plugins as $plugin){
+            $this->addContent("rail", $plugin);
         }
     }
     function addContent($key="rail", $content=null){
@@ -145,9 +156,13 @@ class shareRail {
     function messageInfo($text, $type="updated"){
         return '<div id="message" class="' . $type . '"><p>' . $text . '</p></div>';
     }
+
+
+
     function hook_admin_menu(){
         if(current_user_can('manage_options')){
             add_menu_page('Share Rail', 'Share Rail', 7, 'share-rail/incs/settings.php', '', plugins_url('share-rail/img/share.png'));
+            add_submenu_page( 'share-rail/incs/settings.php', 'Sort', 'Sort', 'manage_options', 'share-rail/incs/settings-sort.php' ); 
         }
     }
     function hook_wp_head(){
@@ -173,6 +188,7 @@ class shareRail {
         wp_enqueue_script('jquery');
         wp_enqueue_script('jquery-ui-core');
         wp_enqueue_script('jquery-ui-accordion');
+        wp_enqueue_script('jquery-ui-sortable');
         wp_enqueue_style('jquery-ui', plugins_url('share-rail/admin/ui/theme.css'));
     }
     function loadScript($library=false){
