@@ -32,12 +32,13 @@ $itemSavedOrder = stripslashes(get_option("itemorder"));
 $pluginPath = realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "plugin" . DIRECTORY_SEPARATOR;
 $plugins = array();
 
-$savedOrder = json_decode($itemSavedOrder, true);
-
-foreach($savedOrder as $key=>$val){
-	$plugins[$val] = $key;	
+$itemOrder = get_option("itemorder");
+if(trim($itemOrder)!=""){
+    $savedOrder = json_decode(stripslashes($itemOrder), true);
+	foreach($savedOrder as $key=>$val){
+		$plugins[$val] = $key;	
+	}
 }
-
 if($handle = opendir($pluginPath)) {
     while (false !== ($entry = readdir($handle))) {
         if ($entry != "." && $entry != "..") {
